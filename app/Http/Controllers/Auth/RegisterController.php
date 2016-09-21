@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/settings';
 
     /**
      * Create a new controller instance.
@@ -62,10 +62,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        session()->flash('step', 'Step One Complete');
+        
+        $successmessage = 'Welcome '.$data['name'].'.';
+        session()->flash('success', $successmessage);
+        session()->flash('important', 'alert-important');
+
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    // session()->flash('alert_message', "Hey, {$request->user()->name}! You're an official Fitnit. Now we have to set up your default settings.");
+    // session()->flash('alert_class', 'alert-info');
+
 }

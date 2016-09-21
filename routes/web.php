@@ -2,15 +2,31 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Static Page Routes
 |--------------------------------------------------------------------------
 |
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
+| These routes are for informational pages and links (recommended reading).
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
+
+
+/*
+|--------------------------------------------------------------------------
+| Dynamic (Guest && Authenticated) User Application Routes
+|--------------------------------------------------------------------------
+|
+| These routes are for the user application only
+|
+*/
+
+Auth::routes();
+
+Route::get('/home', 'ProfileController@index');
+
+
+Route::get('/settings', 'ProfileController@settingsForm');
+Route::post('/settings', 'ProfileController@updateSettings');
+
+
