@@ -23,7 +23,7 @@ Route::get('/', 'PagesController@index');
 
 Auth::routes();
 
-Route::get('/home', 'ProfileController@index');
+Route::get('/home', 'DashboardController@index');
 
 
 Route::get('/settings', 'ProfileController@settingsForm');

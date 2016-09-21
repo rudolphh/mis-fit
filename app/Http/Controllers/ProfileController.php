@@ -20,28 +20,6 @@ class ProfileController extends Controller
 
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
-    {
-        $content_title = 'Dashboard';
-        $user = $request->user();
-
-        if(is_null($user->height)){
-
-            $update_message = 'Update your settings before continuing.';
-            session()->flash('update_message', $update_message);
-
-            return view ('forms.settings', compact('content_title', 'user'));
-        }
-        else { return view ('home', compact('content_title')); }
-
-    }
-
-
-    /**
      * Update the user's profile.
      *
      * @param  Request  $request
