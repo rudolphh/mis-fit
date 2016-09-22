@@ -30,3 +30,4 @@ Route::get('/settings', 'ProfileController@settingsForm');
 Route::post('/settings', 'ProfileController@updateSettings');
 
 
+Route::resource('measurements', 'MeasurementController');
