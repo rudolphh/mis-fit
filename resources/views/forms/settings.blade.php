@@ -63,12 +63,12 @@
       <label class="radio-inline" for="system-0">
         <input type="radio" name="system" id="system-0" value="imperial"
         {{ $user->system == 'imperial' ? 'checked' : '' }} >
-        Inches
+        inches / lbs.
       </label> 
       <label class="radio-inline" for="system-1">
         <input type="radio" name="system" id="system-1" value="metric"
         {{ $user->system == 'metric' ? 'checked' : '' }} >
-        Centimeters
+        cm / kg
       </label>
     </div>
   </div>
