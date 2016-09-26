@@ -25,9 +25,9 @@ Auth::routes();
 
 Route::get('/home', 'DashboardController@index');
 
-
+// 
 Route::get('/settings', 'ProfileController@settingsForm');
 Route::post('/settings', 'ProfileController@updateSettings');
 
 
-Route::resource('measurements', 'MeasurementController');
+Route::resource('measurements', 'MeasurementsController');
