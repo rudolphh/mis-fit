@@ -17,5 +17,12 @@ class Measurement extends Model
     ];
 
 
+    /**
+     * Get the user that owns the measurement.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
 }
