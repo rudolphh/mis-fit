@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UpdateSettingsRequest;
 
 
-class ProfileController extends Controller
+class SettingsController extends Controller
 {
     /** 
      * Create a new controller instance.
