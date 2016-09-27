@@ -57,10 +57,20 @@
   }
 
 
-.navbar-nav .open .dropdown-menu {
+  .navbar-nav .open .dropdown-menu {
 
-    text-align: center;
-}
+      text-align: left;
+  }
+
+  .alert { text-align: center; }
+
+   .dropdown-menu > li {
+      display: inline-flex;
+      
+  }
+  .open > ul {
+      display: inline-flex !important;
+  }
 
 
 

@@ -1,21 +1,41 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
-use Illuminate\Http\Request;
+use App\Measurement;
 use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateMeasurementRequest;
+
+
 
 class MeasurementsController extends Controller
 {
+
+    /** 
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return "measurements index";
+        $content_title = "Measurements";
+        $user = $request->user();
+        $measurements = $user->measurements()->get();
+        return view('measure.index', compact('content_title', 'user', 'measurements'));
     }
 
     /**
@@ -25,7 +45,11 @@ class MeasurementsController extends Controller
      */
     public function create()
     {
-        //
+        // GET 
+        $content_title = "Add Measurement";
+        $user= new Measurement;
+
+        return view('forms.measurement', compact('content_title', 'user'));
     }
 
     /**
@@ -34,9 +58,19 @@ class MeasurementsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateMeasurementRequest $request)
     {
-        //
+        // POST - if here, validation passed
+        $user = Auth()->user();
+        $input = new Measurement($request->all());
+        $user->measurements()->save($input);
+        
+        session()->flash('success', 'New Measurement Added.');
+        //session()->flash('flash_message_important','');
+        
+        return redirect()->route('measurements.index'); 
+
+
     }
 
     /**

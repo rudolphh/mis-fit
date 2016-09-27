@@ -11,34 +11,16 @@
 
 
 
-/*
-|--------------------------------------------------------------------------
-| Static Page Routes
-|--------------------------------------------------------------------------
-|
-| These routes are for informational pages and links (recommended reading).
-|
-*/
+Route::get('/', 'Guest\PagesController@index');
 
-Route::get('/', 'PagesController@index');
-
-
-/*
-|--------------------------------------------------------------------------
-| Dynamic (Guest && Authenticated) User Application Routes
-|--------------------------------------------------------------------------
-|
-| These routes are for the user application only
-|
-*/
 
 Auth::routes();
 
-Route::get('/home', 'DashboardController@index');
 
-// 
-Route::get('/settings', 'SettingsController@settingsForm')->name('settings.show');
-Route::post('/settings', 'SettingsController@updateSettings')->name('settings.update');
+Route::get('/home', 'User\DashboardController@index');
 
+Route::get('/settings', 'User\SettingsController@settingsForm')->name('settings.show');
+Route::post('/settings', 'User\SettingsController@updateSettings')->name('settings.update');
 
-Route::resource('measurements', 'MeasurementsController');
+Route::resource('measurements', 'User\MeasurementsController');
+

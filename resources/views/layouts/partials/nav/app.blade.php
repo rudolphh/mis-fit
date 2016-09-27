@@ -1,13 +1,13 @@
 
 
-<style type="text/css">
+{{-- <style type="text/css">
     body { padding-top: 70px; }
 
 </style>
+ --}}
 
 
-
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -27,10 +27,14 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav" style="display: block; float: left;">
+                <ul id="left-nav" class="nav navbar-nav" style="display: inline-flex; float: left;">
                     
                     <li><a href="{{ url('/home') }}">
                         <i class="fa fa-btn fa-home fa-2x"></i>Home</a>
+                    </li>
+
+                    <li><a href="{{ url('/measurements') }}">
+                        <i class="fa fa-btn fa-user fa-2x"></i>Measures</a>
                     </li>
 
                 </ul>

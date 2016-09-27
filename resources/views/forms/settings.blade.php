@@ -1,6 +1,6 @@
-@extends('home')
+@extends('app')
 
-@include('forms.settings-script')
+@include('forms.scripts.settings')
 
 @section('main')
 
