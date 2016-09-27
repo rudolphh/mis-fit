@@ -2,9 +2,11 @@
 
 
 // Route::get('users', function () {
-// $user = App\User::with('measurements')->first();
+	
+// $users = App\User::with('measurements')->get();
 
-// return $user->toArray();
+// return $users->toArray();
+
 // });
 
 
