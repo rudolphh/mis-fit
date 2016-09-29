@@ -4,7 +4,15 @@
 
 @section('main')
 
-  <form class="form-horizontal" role="form" method="POST" action="{{ url('/measurements') }}">
+  <form class="form-horizontal" role="form" method="POST" 
+        @if (isset($create))
+          action="{{ url('/measurements') }}">
+        @elseif (isset($edit))
+          action="{{ url('/measurements/'.$measurement->id) }}">
+          <input name="_method" type="hidden" value="PUT">
+        @endif
+
+
   {{ csrf_field() }}
   <fieldset>
 
@@ -13,7 +21,7 @@
     <label class="col-md-4 control-label" for="weight">weight</label>  
     <div class="col-md-4">
     <input id="weight" name="weight" type="text" placeholder="" 
-        class="form-control input-md" required="" value="{{ $user->weight }}">
+        class="form-control input-md" required="" value="{{ $measurement->weight }}">
 
     @if ($errors->has('weight'))
         <span class="help-block">
@@ -30,7 +38,7 @@
     <label class="col-md-4 control-label" for="neck">neck</label>  
     <div class="col-md-4">
     <input id="neck" name="neck" type="text" placeholder="" 
-        class="form-control input-md" required="" value="{{ $user->neck }}">
+        class="form-control input-md" required="" value="{{ $measurement->neck }}">
 
     @if ($errors->has('neck'))
         <span class="help-block">
@@ -47,7 +55,7 @@
     <label class="col-md-4 control-label" for="waist">waist</label>  
     <div class="col-md-4">
     <input id="waist" name="waist" type="text" placeholder="" 
-        class="form-control input-md" required="" value="{{ $user->waist }}">
+        class="form-control input-md" required="" value="{{ $measurement->waist }}">
 
     @if ($errors->has('waist'))
         <span class="help-block">
@@ -66,7 +74,7 @@
       <label class="col-md-4 control-label" for="hip">hip</label>  
       <div class="col-md-4">
       <input id="hip" name="hip" type="text" placeholder="" 
-          class="form-control input-md" required="" value="{{ $user->hip }}">
+          class="form-control input-md" required="" value="{{ $measurement->hip }}">
 
       @if ($errors->has('hip'))
           <span class="help-block">
