@@ -10,9 +10,10 @@
 <script type="text/javascript">
 
 
-
 // any alert thats not important, show for 5 seconds and slide up to hide
 $('div.alert').not('div.alert-important').delay(5000).slideUp(300);
+
+
 
   // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
   $('.dropdown').on('show.bs.dropdown', function(e){

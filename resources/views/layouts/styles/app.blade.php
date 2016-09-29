@@ -21,6 +21,7 @@
 	.fa-2x {
 	    font-size: 2em;
 	    vertical-align: middle;
+      padding-right: 10px;
 	}
 
 	.modal-body p {
