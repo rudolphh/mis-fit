@@ -1,7 +1,14 @@
 <!-- Fonts -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+{{-- <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
+ --}}
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+
+
+ 
 <!-- Styles -->
 
 <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -16,7 +23,7 @@
   }
 
 	.fa-btn {
-	    margin-right: 10px;
+	    margin-right: 0px;
 	}
 	.fa-2x {
 	    font-size: 2em;
@@ -71,6 +78,10 @@
   }
   .open > ul {
       display: inline-flex !important;
+  }
+
+  #content-title {
+    font-size: 18px;
   }
 
 

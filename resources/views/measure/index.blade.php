@@ -5,12 +5,12 @@
 
 @section('main')
 
-
-<table id="measurement_table" class="table table-striped table-bordered" 
+<div class="table-responsive">
+<table id="measurementTable" class="table table-striped table-bordered" 
         cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>#</th>
+                <th>Date</th>
                 <th>Weight</th>
                 <th>Neck</th>
                 <th>Waist</th>
@@ -20,13 +20,12 @@
                 <th>BF%</th>
                 <th>LBM</th>
                 <th>BMR</th>
-                <th>Date</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
         </thead>
         <tfoot>
-                <th>#</th>
+                <th>Date</th>
                 <th>Weight</th>
                 <th>Neck</th>
                 <th>Waist</th>
@@ -36,7 +35,6 @@
                 <th>BF%</th>
                 <th>LBM</th>
                 <th>BMR</th>
-                <th>Date</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -44,29 +42,33 @@
         <tbody>
         @foreach ($measurements as $measure)
             <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $measure->weight }}</td>
-                <td>{{ $measure->neck }}</td>
-                <td>{{ $measure->waist }}</td>
+                {{-- <td>{{ $loop->iteration }}</td> --}}
+                <td>
+        <a href="{{ route('measurements.show', ['id' => $measure->id ]) }}" >
+            {{ $measure->created_at->format('m/d/Y') }}
+        </a>
+                </td>
+                <td>{{ (float)$measure->weight }}</td>
+                <td>{{ (float)$measure->neck }}</td>
+                <td>{{ (float)$measure->waist }}</td>
                 @if($user->gender == 'female')
-                    <td>{{ $measure->hip }}</td>
+                    <td>{{ (float)$measure->hip }}</td>
                 @endif
                 <td>{{ 0 }}</td>
                 <td>{{ 0 }}</td>
                 <td>{{ 0 }}</td>
-                <td>{{ $measure->created_at }}</td>
     <td><p data-placement="top" data-toggle="tooltip" title="Edit">
-        <a class="btn btn-default" type="button" data-title="Edit" 
+        <a class="btn btn-xs" type="button" data-title="Edit" 
                 href="{{ route('measurements.edit', ['id' => $measure->id ]) }}" >
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
         </a>
         </p>
     </td>
     <td><p data-placement="top" data-toggle="tooltip" title="Edit">
-        <a class="btn btn-default delete" type="button" data-title="Edit" 
+        <a class="btn btn-xs delete" type="button" data-title="Edit" 
                 data-id="{{ $measure->id }}"
                 data-href="{{ route('measurements.destroy', ['id' => $measure->id ]) }}" >
-            <i class="fa fa-trash" aria-hidden="true"></i>
+            <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
         </a>
         </p>
     </td>
@@ -74,6 +76,10 @@
         @endforeach   
         </tbody>
     </table>
+</div>
+
+
+
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
       <div class="modal-dialog">

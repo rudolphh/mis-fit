@@ -91,7 +91,7 @@
   <div class="form-group">
     <label class="col-md-4 control-label" for="save"></label>
     <div class="col-md-4">
-      <button id="save" name="save" class="btn btn-primary">Save</button>
+      <button id="save" name="save" class="btn btn-primary btn-block">Save</button>
     </div>
   </div>
 

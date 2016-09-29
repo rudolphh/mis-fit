@@ -3,9 +3,9 @@
 
 <!-- <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script> -->
 
-{{-- <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" ></script>
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" ></script>
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js" ></script>
- --}}
+
 
 <script type="text/javascript">
 
