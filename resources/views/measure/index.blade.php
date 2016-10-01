@@ -6,7 +6,7 @@
 @section('main')
 
 {{-- <div class="table-responsive"> --}}
-<table id="measurementTable" class="row-border hover order-column hidden" 
+<table id="measurements-table" class="row-border hover order-column hidden" 
         cellspacing="0" width="100%">
         <thead>
             <tr>

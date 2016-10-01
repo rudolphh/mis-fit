@@ -5,7 +5,7 @@
 $(document).ready(function(){
 
 
-    $('#measurementTable').DataTable({
+    $('#measurements-table').DataTable({
         "aaSorting": [],
         "oLanguage": {
           "sLengthMenu": "_MENU_",
@@ -69,7 +69,7 @@ $(document).ready(function(){
 
 
 
-$('#measurementTable').removeClass('hidden');
+$('#measurements-table').removeClass('hidden');
 
 
 
