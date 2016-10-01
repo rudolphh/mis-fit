@@ -11,8 +11,26 @@
 
 
 
-Route::get('/', 'Guest\PagesController@index');
+//Route::get('/', 'Guest\PagesController@index');
+Route::get('/', function(){
 
+	return view('demo');
+});
+
+Route::get('/measurements/serverSide', [
+    'as'   => 'measurements.serverSide',
+    'uses' => function () {
+    	$user = auth()->user();
+
+    	$measure_columns = $user->measurements()
+    					->select([ 'created_at', 'weight', 'neck', 'waist', 'hip' ]);
+
+        return Datatables::of($measure_columns)->make();
+    }
+]);
+
+
+//////////////////////////////////  
 
 Auth::routes();
 
