@@ -92,7 +92,27 @@
     font-size: 18px;
   }
 
+  .logo { font-size: 24px; }
 
+
+
+
+
+table.dataTable.order-column tbody tr>.sorting_1 {
+background-color: #337ab7;
+color: white;
+
+  } 
+  tbody tr>.sorting_1 a { color: white; }
+  tbody tr:hover>.sorting_1 a { color: black; }
+
+isplay tbody tr:hover>.sorting_1, table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
+    background-color: #eaeaea;
+    color: black;
+}
+
+
+table.hidden { display: none; }
 
 /*    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, 
     .navbar-default .navbar-nav>.open>a:hover {

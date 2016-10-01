@@ -20,7 +20,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand logo" href="{{ url('/') }}">
                     {{ config('app.styled_name', 'Laravel') }}
                 </a>
             </div>

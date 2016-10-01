@@ -4,6 +4,17 @@
 
 @section('main')
 
+    @if(isset($edit))
+    <div style="float: right; width: 50%; text-align: center;">
+        <span style="padding-left: 10px;">
+         {{ 'Date : '.$measurement->created_at->format('m/d/Y') }}
+        </span>
+        <span style="padding-left: 10px;">
+         {{ 'Time : '.$measurement->created_at->format('h:i:s A') }}
+        </span>
+    </div>
+    @endif
+
   <form class="form-horizontal" role="form" method="POST" 
         @if (isset($create))
           action="{{ url('/measurements') }}">
@@ -18,15 +29,15 @@
 
   <!-- Text input-->
   <div class="form-group {{ $errors->has('weight') ? 'has-error' : '' }}">
-    <label class="col-md-4 control-label" for="weight">weight</label>  
+    <label class="col-md-4 control-label" for="weight">Weight</label>  
     <div class="col-md-4">
     <input id="weight" name="weight" type="text" placeholder="" 
         class="form-control input-md" required="" value="{{ $measurement->weight }}">
 
     @if ($errors->has('weight'))
-        <span class="help-block">
+        <div class="help-block">
             <strong>{{ $errors->first('weight') }}</strong>
-        </span>
+        </div>
     @endif
       
     </div>
@@ -35,15 +46,15 @@
 
   <!-- Text input-->
   <div class="form-group {{ $errors->has('neck') ? 'has-error' : '' }}">
-    <label class="col-md-4 control-label" for="neck">neck</label>  
+    <label class="col-md-4 control-label" for="neck">Neck</label>  
     <div class="col-md-4">
     <input id="neck" name="neck" type="text" placeholder="" 
         class="form-control input-md" required="" value="{{ $measurement->neck }}">
 
     @if ($errors->has('neck'))
-        <span class="help-block">
+        <div class="help-block">
             <strong>{{ $errors->first('neck') }}</strong>
-        </span>
+        </div>
     @endif
       
     </div>
@@ -52,15 +63,15 @@
 
   <!-- Text input-->
   <div class="form-group {{ $errors->has('waist') ? 'has-error' : '' }}">
-    <label class="col-md-4 control-label" for="waist">waist</label>  
+    <label class="col-md-4 control-label" for="waist">Waist</label>  
     <div class="col-md-4">
     <input id="waist" name="waist" type="text" placeholder="" 
         class="form-control input-md" required="" value="{{ $measurement->waist }}">
 
     @if ($errors->has('waist'))
-        <span class="help-block">
+        <div class="help-block">
             <strong>{{ $errors->first('waist') }}</strong>
-        </span>
+        </div>
     @endif
       
     </div>
@@ -71,15 +82,15 @@
 
     <!-- Hip measurement input-->
     <div class="form-group {{ $errors->has('hip') ? 'has-error' : '' }}">
-      <label class="col-md-4 control-label" for="hip">hip</label>  
+      <label class="col-md-4 control-label" for="hip">Hip</label>  
       <div class="col-md-4">
       <input id="hip" name="hip" type="text" placeholder="" 
           class="form-control input-md" required="" value="{{ $measurement->hip }}">
 
       @if ($errors->has('hip'))
-          <span class="help-block">
+          <div class="help-block">
               <strong>{{ $errors->first('hip') }}</strong>
-          </span>
+          </div>
       @endif
         
       </div>

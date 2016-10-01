@@ -6,7 +6,7 @@
 @section('main')
 
 {{-- <div class="table-responsive"> --}}
-<table id="measurementTable" class="table table-striped table-bordered" 
+<table id="measurementTable" class="row-border hover order-column hidden" 
         cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -18,8 +18,7 @@
                 @if($user->gender == 'female')
                     <th>Hip</th>
                 @endif
-                <th>LBM</th>
-                <th>BMR</th>
+
 {{--                 <th>Edit</th>
                 <th>Delete</th> --}}
             </tr>
@@ -33,8 +32,7 @@
                 @if($user->gender == 'female')
                     <th>Hip</th>
                 @endif
-                <th>LBM</th>
-                <th>BMR</th>
+
 {{--                 <th>Edit</th>
                 <th>Delete</th> --}}
             </tr>
@@ -46,7 +44,17 @@
                 <td>
         <a href="{{ route('measurements.show', ['id' => $measure->id ]) }}" >
             {{ $measure->created_at->format('m/d/Y - h:i A') }}
+        </a><span style="float: right;">
+        <a class="btn btn-xs" type="button" data-title="Edit" 
+                href="{{ route('measurements.edit', ['id' => $measure->id ]) }}" >
+            <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
         </a>
+        
+        <a class="btn btn-xs delete" type="button" data-title="Edit" 
+                data-id="{{ $measure->id }}"
+                data-href="{{ route('measurements.destroy', ['id' => $measure->id ]) }}" >
+            <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+        </a></span>
                 </td>
                 <td>{{ 0 }}</td>
                 <td>{{ (float)$measure->weight }}</td>
@@ -56,8 +64,7 @@
                     <td>{{ (float)$measure->hip }}</td>
                 @endif
 
-                <td>{{ 0 }}</td>
-                <td>{{ 0 }}</td>
+
 {{--     <td><p data-placement="top" data-toggle="tooltip" title="Edit">
         <a class="btn btn-xs" type="button" data-title="Edit" 
                 href="{{ route('measurements.edit', ['id' => $measure->id ]) }}" >
@@ -92,7 +99,7 @@
       </div>
           <div class="modal-body">
        
-       <div class="alert alert-danger alert-important"><i class="fa fa-exclamation-triangle fa-2x"></i> Are You Sure?</div>
+       <div class="alert alert-info alert-important"><i class="fa fa-exclamation-triangle fa-2x"></i> Are You Sure?</div>
        
       </div>
     
@@ -110,7 +117,7 @@
         {{Form::button('<i class="fa fa-check">&nbsp;Yes</i>', 
                     array('type' => 'submit', 'class' => 'btn btn-default'))}}
 
-            <button type="button" class="btn btn-danger" data-dismiss="modal">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
             <i class="fa fa-remove "></i>&nbsp;No&nbsp;</button>
             {{-- {!! Form::submit('Delete?', ['class' => 'btn btn-danger']) !!} --}}
 

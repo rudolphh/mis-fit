@@ -6,6 +6,8 @@ use App\Measurement;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
+// DI'd validation
 use App\Http\Requests\EditMeasurementRequest as EditMeasurement;
 use App\Http\Requests\CreateMeasurementRequest as CreateMeasurement;
 
@@ -35,7 +37,7 @@ class MeasurementsController extends Controller
         // GET
         $content_title = "Measurements";
         $user = $request->user();
-        $measurements = $user->measurements()->get();
+        $measurements = $user->measurements()->orderBy('created_at','desc')->get();
         return view('measure.index', compact('content_title', 'user', 'measurements'))
             ->with('create_new', true);
     }
@@ -170,12 +172,5 @@ class MeasurementsController extends Controller
         }
     }
 
-    private function clean_num( $num ){
-        $pos = strpos($num, '.');
-        if($pos === false) { // it is integer number
-            return $num;
-        }else{ // it is decimal number
-            return rtrim(rtrim($num, '0'), '.');
-        }
-    }
+
 }

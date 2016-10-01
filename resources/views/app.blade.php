@@ -7,16 +7,11 @@
         @include('alerts.header-message')
 
         <div class="row">
-            <div class="">
+            <div class="col-md-4 col-md-offset-2">
                 <div class="panel panel-primary">
                 
                     <div class="panel-heading">
                         <span id="content-title">{{ $content_title }}</span>
-                        @if(isset($edit))
-                            <span style="padding-left: 10px;">
-                             {{ '('.$measurement->created_at->format('m/d/Y h:i:s A').')' }}
-                            </span>
-                        @endif
 
                         @if(isset($create_new))
                         <a class="btn btn-xs" href="{{ url('/measurements/create') }}" 
