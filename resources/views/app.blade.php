@@ -7,14 +7,14 @@
         @include('alerts.header-message')
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="">
                 <div class="panel panel-primary">
                 
                     <div class="panel-heading">
                         <span id="content-title">{{ $content_title }}</span>
                         @if(isset($edit))
                             <span style="padding-left: 10px;">
-                             {{ '('.$measurement->created_at->format('m/d/Y').')' }}
+                             {{ '('.$measurement->created_at->format('m/d/Y h:i:s A').')' }}
                             </span>
                         @endif
 

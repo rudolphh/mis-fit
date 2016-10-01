@@ -5,38 +5,38 @@
 
 @section('main')
 
-<div class="table-responsive">
+{{-- <div class="table-responsive"> --}}
 <table id="measurementTable" class="table table-striped table-bordered" 
         cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Date</th>
+                <th>BF%</th>
                 <th>Weight</th>
                 <th>Neck</th>
                 <th>Waist</th>
                 @if($user->gender == 'female')
                     <th>Hip</th>
                 @endif
-                <th>BF%</th>
                 <th>LBM</th>
                 <th>BMR</th>
-                <th>Edit</th>
-                <th>Delete</th>
+{{--                 <th>Edit</th>
+                <th>Delete</th> --}}
             </tr>
         </thead>
         <tfoot>
                 <th>Date</th>
+                <th>BF%</th>
                 <th>Weight</th>
                 <th>Neck</th>
                 <th>Waist</th>
                 @if($user->gender == 'female')
                     <th>Hip</th>
                 @endif
-                <th>BF%</th>
                 <th>LBM</th>
                 <th>BMR</th>
-                <th>Edit</th>
-                <th>Delete</th>
+{{--                 <th>Edit</th>
+                <th>Delete</th> --}}
             </tr>
         </tfoot>
         <tbody>
@@ -45,19 +45,20 @@
                 {{-- <td>{{ $loop->iteration }}</td> --}}
                 <td>
         <a href="{{ route('measurements.show', ['id' => $measure->id ]) }}" >
-            {{ $measure->created_at->format('m/d/Y') }}
+            {{ $measure->created_at->format('m/d/Y - h:i A') }}
         </a>
                 </td>
+                <td>{{ 0 }}</td>
                 <td>{{ (float)$measure->weight }}</td>
                 <td>{{ (float)$measure->neck }}</td>
                 <td>{{ (float)$measure->waist }}</td>
                 @if($user->gender == 'female')
                     <td>{{ (float)$measure->hip }}</td>
                 @endif
+
                 <td>{{ 0 }}</td>
                 <td>{{ 0 }}</td>
-                <td>{{ 0 }}</td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit">
+{{--     <td><p data-placement="top" data-toggle="tooltip" title="Edit">
         <a class="btn btn-xs" type="button" data-title="Edit" 
                 href="{{ route('measurements.edit', ['id' => $measure->id ]) }}" >
             <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
@@ -71,13 +72,14 @@
             <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
         </a>
         </p>
-    </td>
+    </td> --}}
             </tr>
         @endforeach   
         </tbody>
     </table>
-</div>
 
+{{-- </div>
+ --}}
 
 
 

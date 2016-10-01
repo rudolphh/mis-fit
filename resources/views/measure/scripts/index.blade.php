@@ -6,9 +6,15 @@ $(document).ready(function(){
 
 
     $('#measurementTable').DataTable({
+
+        "oLanguage": {
+          "sLengthMenu": "_MENU_",
+          "sSearch": ""
+       
+         },
         "columnDefs": [
-          { "orderable": false, "targets": 8 },
-          { "orderable": false, "targets": 9 },
+          // { "orderable": false, "targets": 8 },
+          // { "orderable": false, "targets": 9 },
           {
             "targets": [ 6 ],
             "visible": false,
