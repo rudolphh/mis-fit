@@ -6,6 +6,9 @@ $(document).ready(function(){
 
 
     $('#measurements-table').DataTable({
+        // processing: true,
+        // serverSide: true,
+        /* ajax: '{{ route('measurements.serverSide') }}',*/
         "aaSorting": [],
         "oLanguage": {
           "sLengthMenu": "_MENU_",

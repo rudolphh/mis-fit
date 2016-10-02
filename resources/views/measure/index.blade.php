@@ -18,12 +18,10 @@
                 @if($user->gender == 'female')
                     <th>Hip</th>
                 @endif
-
-{{--                 <th>Edit</th>
-                <th>Delete</th> --}}
             </tr>
         </thead>
         <tfoot>
+            <tr>
                 <th>Date</th>
                 <th>BF%</th>
                 <th>Weight</th>
@@ -32,9 +30,6 @@
                 @if($user->gender == 'female')
                     <th>Hip</th>
                 @endif
-
-{{--                 <th>Edit</th>
-                <th>Delete</th> --}}
             </tr>
         </tfoot>
         <tbody>
@@ -137,14 +132,3 @@
 @stop
 
 
- {{--        {!! Form::open([
-            'id' => 'delete',
-            'method' => 'DELETE',
-            'route' => ['measurements.destroy', $measure->id]
-        ]) !!}
-        {{Form::button('<i class="fa fa-trash"></i>', 
-                    array('type' => 'submit', 'class' => 'btn btn-danger'))}}
-
-            {{-- {!! Form::submit('Delete?', ['class' => 'btn btn-danger']) !!} --}}
-{{--         {!! Form::close() !!}
- --}}        
