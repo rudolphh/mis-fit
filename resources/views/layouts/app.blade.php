@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
-    @include('layouts.app-style')
+    @include('layouts.styles.app')
 
 
     <!-- Scripts -->
@@ -23,12 +23,12 @@
 </head>
 <body>
 
-    @include('partials.nav')
+    @include('layouts.partials.nav.app')
 
     @yield('content')
 
 
 
-    @include('layouts.app-script')
+    @include('layouts.scripts.app')
 </body>
 </html>

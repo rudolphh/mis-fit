@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
 class DashboardController extends Controller
@@ -29,13 +30,11 @@ class DashboardController extends Controller
 
         if(is_null($user->height)){
 
-            $update_message = 'Update your settings before continuing.';
-            session()->flash('update_message', $update_message);
-
-            return view ('forms.settings', compact('content_title', 'user'));
+            // redirect to settings to initialize them
+            return redirect()->route('settings.show');
         }
-        else { return view ('home', compact('content_title')); }
-
+        // otherwise settings have been set, and the user can move on
+        else { return view ('app', compact('content_title')); }
     }
 
 }

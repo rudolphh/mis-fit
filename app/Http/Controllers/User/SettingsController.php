@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateSettingsRequest;
 
 
-class ProfileController extends Controller
+class SettingsController extends Controller
 {
     /** 
      * Create a new controller instance.
@@ -40,13 +41,14 @@ class ProfileController extends Controller
         return view('forms.settings', compact('content_title', 'user'));
     }
 
+
     public function updateSettings(UpdateSettingsRequest $request)
     {
         Auth()->user()->update($request->all());
         
         session()->flash('success', 'Settings Updated.');
-
         //session()->flash('flash_message_important','');
+        
         return redirect('/home'); 
     }
 

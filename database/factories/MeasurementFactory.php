@@ -11,13 +11,13 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
+$factory->define(App\Measurement::class, function (Faker\Generator $faker) {
 
+	 
     return [
-        'name' => $faker->name,
-        'email' => $faker->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'weight' => $faker->randomFloat(5, 0.00, 500.00), // 48.8932,
+        'neck' => $faker->randomFloat(5, 0.00, 50.00),
+        'waist' => $faker->randomFloat(5, 0.00, 150.00),
+        'hip' =>  '0'
     ];
 });
