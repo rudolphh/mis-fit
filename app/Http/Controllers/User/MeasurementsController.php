@@ -130,19 +130,16 @@ class MeasurementsController extends Controller
         $input = $request->all();
         $measurement = $user->measurements()->find($id);
 
-        if(is_null($measurement)){
-            return redirect()->route('measurements.index');
-        }
-        else {
-        
+        if(!is_null($measurement)){
             $input['user_id'] = $user->id;
             $measurement->update($input);
         
             session()->flash('success', 'Measurement Updated.');
             //session()->flash('flash_message_important','');
-            
-            return redirect()->route('measurements.index'); 
         }
+    
+        return redirect()->route('measurements.index'); 
+        
     }
 
     /**
@@ -158,18 +155,14 @@ class MeasurementsController extends Controller
         $user = Auth()->user();
         $measurement = $user->measurements()->find($id);
 
-        if(is_null($measurement)){
-            return redirect()->route('measurements.index');
-        }
-        else {
-
+        if(!is_null($measurement)){
             $measurement->delete();
-        
             session()->flash('info', 'Measurement Deleted.');
             //session()->flash('flash_message_important','');
-            
-            return redirect()->route('measurements.index'); 
         }
+
+        return redirect()->route('measurements.index'); 
+        
     }
 
 

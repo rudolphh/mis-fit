@@ -27,7 +27,9 @@
                     </div>
 
                     <div class="panel-body">
+
                         @yield('main')
+                        
                     </div>
                 </div>
             </div>

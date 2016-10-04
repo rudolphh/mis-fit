@@ -9,7 +9,8 @@
         "laravel/framework": "5.3.*",
         "filp/whoops": "^2.1",
         "laravelcollective/html": "^5.2.0",
-        "yajra/laravel-datatables-oracle": "~6.0"
+        "yajra/laravel-datatables-oracle": "~6.0",
+        "hootlex/laravel-friendships": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

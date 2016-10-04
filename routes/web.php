@@ -42,3 +42,7 @@ Route::post('/settings', 'User\SettingsController@updateSettings')->name('settin
 
 Route::resource('measurements', 'User\MeasurementsController');
 
+
+///////////////  Friends routes
+
+Route::get('/friends', 'FriendsController@index')->name('friends.index');
