@@ -15,12 +15,12 @@
 
                         @if(isset($create_new))
                         <a class="btn btn-xs" href="{{ url('/measurements/create') }}" 
-                            style="float: right; color: white; ">
+                            style="float: right; color: #3097D1; ">
                             <i class="fa fa-btn fa-plus fa-2x"></i>
                         </a>
                         @elseif(isset($cancel_new))
                         <a class="btn btn-xs" href="{{ url('/measurements') }}" 
-                            style="float: right; color: white;">
+                            style="float: right; color: lightgray;">
                             <i class="fa fa-btn fa-times fa-2x"></i>
                         </a>                   
                         @endif

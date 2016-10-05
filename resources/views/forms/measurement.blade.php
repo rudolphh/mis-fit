@@ -4,16 +4,21 @@
 
 @section('main')
 
+    <div style="float: right; width: 80%; text-align: center;">
+
     @if(isset($edit))
-    <div style="float: right; width: 50%; text-align: center;">
         <span style="padding-left: 10px;">
          {{ 'Date : '.$measurement->created_at->format('m/d/Y') }}
         </span>
         <span style="padding-left: 10px;">
          {{ 'Time : '.$measurement->created_at->format('h:i:s A') }}
         </span>
-    </div>
+
+    @else 
+        Side Content Space
     @endif
+
+    </div>
 
   <form class="form-horizontal" role="form" method="POST" 
         @if (isset($create))

@@ -9,6 +9,16 @@
 
 // });
 
+// Route::get('/friend/requests', function(){
+// $sender = App\User::find(23);
+// $recipient = App\User::find(75);
+
+// $sender->befriend($recipient);
+// $recipient->acceptFriendRequest($sender);
+
+// return $sender->getFriends();
+// });
+
 
 
 //Route::get('/', 'Guest\PagesController@index');
@@ -46,3 +56,6 @@ Route::resource('measurements', 'User\MeasurementsController');
 ///////////////  Friends routes
 
 Route::get('/friends', 'FriendsController@index')->name('friends.index');
+
+Route::get('/friends/requests', 'FriendsController@friendRequests')->name('friends.requests');
+Route::get('/friends/pending', 'FriendsController@pendingFriendships')->name('friends.pending');

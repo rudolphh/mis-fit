@@ -17,6 +17,38 @@
         font-family: 'Lato';   
   }
 
+.measure {
+  text-indent: -9999px;
+  width: 32px;
+  height: 24px;
+  background-size: 32px 24px;
+
+}
+
+/*DATATABLES OVERRIDE FOR PAGINATION*/
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    border: none !important;
+    background: #fff !important;
+    background-color: #fff !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+     box-sizing: initial; 
+     display: inline; 
+     min-width: 0; 
+     padding: 0 0; 
+     margin-left: 0;
+     text-decoration: none; 
+     border: none !important;
+}
+
+/* color of main sections */
+.panel-primary { border: none; }
+.panel-primary>.panel-heading {
+    color: black;
+    background-color: white;
+    border-color: #3097D1;
+}
+
 	.fa-btn {
 	    margin-right: 0px;
 	}

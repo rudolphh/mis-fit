@@ -34,7 +34,10 @@
                     </li>
 
                     <li><a href="{{ url('/measurements') }}">
-                        <i class="fa fa-btn fa-user fa-2x"></i>Measures</a>
+                        <span>
+                        <svg class="measure" src="{{ include( public_path() . '/images/measure.svg') }}" ></svg>
+                        </span>
+                        Measures</a>
                     </li>
 
                 </ul>

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-//use App\User;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
 
 class FriendsController extends Controller
 {
+
     /** 
      * Create a new controller instance.
      *
@@ -24,10 +24,34 @@ class FriendsController extends Controller
      *
      * @return void
      */
-    public function index(){
+    public function index(Request $request){
 
-
-    	return auth()->user()->friends()->get();
+    	$user = $request->user();
+    	$user->friends = $user->getFriends();
+    	return $user;
 
     }
+
+
+
+
+
+
+    // shows all people that have sent you a friend request
+    public function friendRequests(Request $request){
+    	$user = $request->user();
+    	$user->friendRequests = $user->getFriendRequests();
+    	return $user;
+    }
+
+
+
+    // all friend requests pending approval whether sender or recipient
+    public function pendingFriendships(Request $request){
+    	$user = $request->user();
+    	$user->pendingFriendships = $user->getPendingFriendships();
+    	return $user;
+    }
+
+
 }
