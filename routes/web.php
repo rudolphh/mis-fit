@@ -40,6 +40,13 @@ Route::get('/measurements/serverSide', [
 ]);
 
 
+/* Return view dynamically */
+// Route::get('view/{name_view}', function ($name_view) {
+//     return view($name_view);
+// });
+
+
+
 //////////////////////////////////  
 
 Auth::routes();
@@ -59,3 +66,9 @@ Route::get('/friends', 'FriendsController@index')->name('friends.index');
 
 Route::get('/friends/requests', 'FriendsController@friendRequests')->name('friends.requests');
 Route::get('/friends/pending', 'FriendsController@pendingFriendships')->name('friends.pending');
+
+
+///////////////  Members routes
+
+Route::get('/members','User\MembersController@index')->name('members.index');
+Route::get('/members/ajax','User\MembersController@ajax_index')->name('members.ajax_index');

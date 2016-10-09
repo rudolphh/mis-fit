@@ -7,7 +7,7 @@
  --}}
 
 
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top navbar-dark bg-inverse">
         <div class="container">
             <div class="navbar-header">
 
@@ -27,17 +27,24 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul id="left-nav" class="nav navbar-nav" style="display: inline-flex; float: left;">
+                <ul id="left-nav" class="nav navbar-nav" style="">
                     
                     <li><a href="{{ url('/home') }}">
                         <i class="fa fa-btn fa-home fa-2x"></i>Home</a>
                     </li>
+                    <li><a href="{{ url('/members') }}">
+                        <i class="fa fa-btn fa-users fa-2x"></i>Members</a>
+                    </li>
 
+                    <li><a href="{{ url('/friends') }}">
+                        <i class="fa fa-btn fa-user fa-2x"></i>Friends</a>
+                    </li>
                     <li><a href="{{ url('/measurements') }}">
-                        <span>
+{{--                         <span>
                         <svg class="measure" src="{{ include( public_path() . '/images/measure.svg') }}" ></svg>
-                        </span>
-                        Measures</a>
+                        </span> --}}
+                        
+                        <i class="fa fa-btn fa-pencil fa-2x"></i>Measures</a>
                     </li>
 
                 </ul>
@@ -45,8 +52,8 @@
 
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right" 
-                    style=" float: right;" >
+                <ul id="right-nav" class="nav navbar-nav navbar-right" 
+                     >
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">

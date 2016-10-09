@@ -6,8 +6,8 @@
 
 <!-- This is actually bootstrap -->
 <link href="/css/app.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" 
-      href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
 
 
 
@@ -16,13 +16,16 @@
   body {
         font-family: 'Lato';   
   }
+  #left-nav { float: left; width: 70%; }
+  #left-nav li { display: inline-table; }
+  #right-nav { float: right; }
 
 .measure {
   text-indent: -9999px;
   width: 32px;
   height: 24px;
   background-size: 32px 24px;
-
+  vertical-align: bottom;
 }
 
 /*DATATABLES OVERRIDE FOR PAGINATION*/
@@ -43,10 +46,12 @@
 
 /* color of main sections */
 .panel-primary { border: none; }
+
 .panel-primary>.panel-heading {
     color: black;
     background-color: white;
-    border-color: #3097D1;
+    /*border-color: #3097D1;*/
+    border: none;
 }
 
 	.fa-btn {
@@ -55,7 +60,7 @@
 	.fa-2x {
 	    font-size: 2em;
 	    vertical-align: middle;
-      padding-right: 10px;
+      width: 36px;
 	}
 
 	.modal-body p {
@@ -102,12 +107,12 @@
   .modal .alert { margin-bottom: 0px; }
 
    .dropdown-menu > li {
-      display: inline-flex;
-      
+/*      display: inline-flex;
+*/      
   }
   .open > ul {
-      display: inline-flex !important;
-  }
+/*      display: inline-flex !important;
+*/  }
 
   #content-title {
     font-size: 18px;
@@ -127,7 +132,7 @@ color: white;
   tbody tr>.sorting_1 a { color: white; }
   tbody tr:hover>.sorting_1 a { color: black; }
 
-isplay tbody tr:hover>.sorting_1, table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
+tbody tr:hover>.sorting_1, table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
     background-color: #eaeaea;
     color: black;
 }
@@ -140,6 +145,54 @@ table.hidden { display: none; }
 	    background-color: darkblue;
 	    color: #fff;
 	}*/
+
+
+
+/* unused box class for making page like look.  NEEDS MODIFYING */
+  .box
+{
+  position: relative;
+    width: 100%;
+    padding: 15px;
+  margin: 0 auto;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.box:before, .box:after
+{
+  position: absolute;
+  width: 40%;
+  height: 10px;
+  content: ' ';
+  left: 12px;
+  bottom: 12px;
+  background: transparent;
+  -webkit-transform: skew(-5deg) rotate(-5deg);
+  -moz-transform: skew(-5deg) rotate(-5deg);
+  -ms-transform: skew(-5deg) rotate(-5deg);
+  -o-transform: skew(-5deg) rotate(-5deg);
+  transform: skew(-5deg) rotate(-5deg);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  z-index: -1;
+} 
+
+.box:after
+{
+  left: auto;
+  right: 12px;
+  -webkit-transform: skew(5deg) rotate(5deg);
+  -moz-transform: skew(5deg) rotate(5deg);
+  -ms-transform: skew(5deg) rotate(5deg);
+  -o-transform: skew(5deg) rotate(5deg);
+  transform: skew(5deg) rotate(5deg);
+}
+
+
 </style>
 
 @yield('styles')

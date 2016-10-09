@@ -7,7 +7,8 @@
         @include('alerts.header-message')
 
         <div class="row">
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
+
                 <div class="panel panel-primary">
                 
                     <div class="panel-heading">

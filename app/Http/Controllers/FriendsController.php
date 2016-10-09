@@ -27,8 +27,10 @@ class FriendsController extends Controller
     public function index(Request $request){
 
     	$user = $request->user();
+    	$content_title = $user->name."'s Friends";
     	$user->friends = $user->getFriends();
-    	return $user;
+    	//return $user;
+        return view('friends.index', compact('content_title', 'user'));
 
     }
 
