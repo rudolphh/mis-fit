@@ -21,7 +21,9 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand logo" href="{{ url('/') }}">
-                    {{ config('app.styled_name', 'Laravel') }}
+                    {{-- {{ config('app.styled_name', 'Laravel') }} --}}
+                    <span style="color: salmon;" >fITnITs</span>
+
                 </a>
             </div>
 

@@ -1,7 +1,5 @@
 @section('scripts');
 
-
-  <script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
   <script>
     $(document).ready(function(){
       $('#members-table').DataTable({
@@ -10,11 +8,13 @@
             ajax: "{{ route('members.ajax_index') }}",
           "oLanguage": {
           "sLengthMenu": "_MENU_",
-          "sSearch": ""
+          "sSearch": "Search for Friends : "
           }
        
          
-        });
+      });// end DataTable()
+
+
     });
   </script>
 

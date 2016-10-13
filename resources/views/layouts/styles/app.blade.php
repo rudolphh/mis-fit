@@ -45,15 +45,15 @@
 }
 
 /* color of main sections */
-.panel-primary { border: none; }
+/*.panel-primary { border: none; }
 
 .panel-primary>.panel-heading {
     color: black;
     background-color: white;
-    /*border-color: #3097D1;*/
+    border-color: #3097D1;
     border: none;
 }
-
+*/
 	.fa-btn {
 	    margin-right: 0px;
 	}

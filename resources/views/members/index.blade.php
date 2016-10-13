@@ -6,13 +6,19 @@
 @section('main')
 
 
-<table id="members-table" class="hover order-column" >
+<table id="members-table" class="table table-striped table-bordered compact" cellspacing="0" width="100%" >
     <thead>
       <tr>
         <th>Name</th>
-        <th>Date</th>
+        <th>Joined</th>
       </tr>
     </thead>
+	<tfoot>
+	  <tr>
+	    <th>Name</th>
+	    <th>Joined</th>
+	  </tr>
+	</tfoot>
     <tbody>
     </tbody>
   </table>
