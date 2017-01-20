@@ -54,7 +54,7 @@
         }
 
         .m-b-md {
-            margin-bottom: 30px;
+            margin: 30px 0 30px 0;
         }
 
         @media screen and (max-width : 760px){

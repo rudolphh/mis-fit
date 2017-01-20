@@ -1,14 +1,10 @@
 
 
-{{-- <style type="text/css">
-    body { padding-top: 70px; }
-
-</style>
- --}}
-
 
 <nav class="navbar navbar-default navbar-static-top navbar-dark bg-inverse">
+
         <div class="container">
+
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
@@ -23,31 +19,28 @@
                 <a class="navbar-brand logo" href="{{ url('/') }}">
                     {{-- {{ config('app.styled_name', 'Laravel') }} --}}
                     <span style="color: salmon;" >fITnITs</span>
-
                 </a>
-            </div>
+
+            </div><!-- End navbar-header -->
+
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
+
                 <!-- Left Side Of Navbar -->
                 <ul id="left-nav" class="nav navbar-nav" style="">
                     
                     <li><a href="{{ url('/home') }}">
-                        <i class="fa fa-btn fa-home fa-2x"></i>Home</a>
-                    </li>
-                    <li><a href="{{ url('/members') }}">
-                        <i class="fa fa-btn fa-users fa-2x"></i>Members</a>
-                    </li>
+                        <i class="fa fa-btn fa-home fa-lg"></i>Home</a></li>
 
                     <li><a href="{{ url('/friends') }}">
-                        <i class="fa fa-btn fa-user fa-2x"></i>Friends</a>
-                    </li>
+                        <i class="fa fa-btn fa-users fa-lg"></i>Friends</a></li>
+
                     <li><a href="{{ url('/measurements') }}">
-{{--                         <span>
-                        <svg class="measure" src="{{ include( public_path() . '/images/measure.svg') }}" ></svg>
-                        </span> --}}
-                        
-                        <i class="fa fa-btn fa-pencil fa-2x"></i>Measures</a>
-                    </li>
+                        <i class="fa fa-btn fa-pencil fa-lg"></i>Measures</a></li>
+
+                    <!-- <li><a href="{{ url('/friends') }}">
+                        <i class="fa fa-btn fa-user fa-lg"></i>Friends</a>
+                    </li> -->
 
                 </ul>
 

@@ -13,11 +13,23 @@
 
 
 <style>
+.table-bordered>thead>tr>th {
+    border-bottom: none;
+}
+table.dataTable.no-footer {
+    border-bottom: none;
+}
   body {
         font-family: 'Lato';   
   }
   #left-nav { float: left; width: 70%; }
-  #left-nav li { display: inline-table; }
+  #left-nav li { display: inline-table; 
+    
+	/*border: 1px solid lightgray;
+    border-radius: 3%;
+    margin: 10px 0 10px 0;*/
+    min-width: 120px;
+}
   #right-nav { float: right; }
 
 .measure {
@@ -27,6 +39,15 @@
   background-size: 32px 24px;
   vertical-align: bottom;
 }
+
+#measurements-table td { text-align: center; margin: 10px; padding: 0; height: 30px; }
+#measurements-table td span { 
+	height: 100%; width: 100%; overflow: auto; display: block;
+	margin-top: 5px;
+ }
+
+#measurements-table td input { width: 98%; text-align: center; margin-top: 1px; }
+
 
 /*DATATABLES OVERRIDE FOR PAGINATION*/
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
@@ -55,7 +76,7 @@
 }
 */
 	.fa-btn {
-	    margin-right: 0px;
+	    padding-right: 10px;
 	}
 	.fa-2x {
 	    font-size: 2em;
@@ -126,14 +147,14 @@
 
 table.dataTable.order-column tbody tr>.sorting_1 {
 background-color: #337ab7;
-color: white;
+
 
   } 
-  tbody tr>.sorting_1 a { color: white; }
+  tbody tr>.sorting_1 a { }
   tbody tr:hover>.sorting_1 a { color: black; }
 
 tbody tr:hover>.sorting_1, table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
-    background-color: #eaeaea;
+    background-color: lightyellow;
     color: black;
 }
 

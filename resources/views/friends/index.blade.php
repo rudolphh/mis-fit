@@ -6,7 +6,7 @@
 @section('main')
 
 {{-- <div class="table-responsive"> --}}
-<table id="friends-table" class="hover order-column hidden" 
+<table id="friends-table" class="table table-striped table-bordered "
         cellspacing="0" width="100%">
         <thead>
             <tr>
