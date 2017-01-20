@@ -20,11 +20,11 @@ $('div.alert').not('div.alert-important').delay(5000).slideUp(300);
   // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
   $('.dropdown').on('show.bs.dropdown', function(e){
 
-    $('#left-nav').css('display', 'block');
+    //$('#left-nav').css('display', 'block');
 
     $(this).find('.dropdown-menu').first().stop(true, true).toggle(1, function(){
     	$(this).parent().addClass('open');
-      $('.dropdown-menu').css('display', 'inline-flex');
+      //$('.dropdown-menu').css('display', 'inline-flex');
     });
   });
 
@@ -33,7 +33,7 @@ $('.dropdown').on('hide.bs.dropdown', function(e){
   e.preventDefault();
   $(this).find('.dropdown-menu').first().stop(true, true).toggle(1, function(){
     $(this).parent().removeClass('open');
-    $('#left-nav').css('display', 'inline-flex');
+    //$('#left-nav').css('display', 'inline-flex');
 
   });
 });

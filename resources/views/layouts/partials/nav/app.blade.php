@@ -1,14 +1,10 @@
 
 
-{{-- <style type="text/css">
-    body { padding-top: 70px; }
 
-</style>
- --}}
+<nav class="navbar navbar-default navbar-static-top navbar-dark bg-inverse">
 
-
-<nav class="navbar navbar-default navbar-static-top">
         <div class="container">
+
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
@@ -21,29 +17,38 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand logo" href="{{ url('/') }}">
-                    {{ config('app.styled_name', 'Laravel') }}
+                    {{-- {{ config('app.styled_name', 'Laravel') }} --}}
+                    <span style="color: salmon;" >fITnITs</span>
                 </a>
-            </div>
+
+            </div><!-- End navbar-header -->
+
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
+
                 <!-- Left Side Of Navbar -->
-                <ul id="left-nav" class="nav navbar-nav" style="display: inline-flex; float: left;">
+                <ul id="left-nav" class="nav navbar-nav" style="">
                     
                     <li><a href="{{ url('/home') }}">
-                        <i class="fa fa-btn fa-home fa-2x"></i>Home</a>
-                    </li>
+                        <i class="fa fa-btn fa-home fa-lg"></i>Home</a></li>
+
+                    <li><a href="{{ url('/friends') }}">
+                        <i class="fa fa-btn fa-users fa-lg"></i>Friends</a></li>
 
                     <li><a href="{{ url('/measurements') }}">
-                        <i class="fa fa-btn fa-user fa-2x"></i>Measures</a>
-                    </li>
+                        <i class="fa fa-btn fa-pencil fa-lg"></i>Measures</a></li>
+
+                    <!-- <li><a href="{{ url('/friends') }}">
+                        <i class="fa fa-btn fa-user fa-lg"></i>Friends</a>
+                    </li> -->
 
                 </ul>
 
 
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right" 
-                    style=" float: right;" >
+                <ul id="right-nav" class="nav navbar-nav navbar-right" 
+                     >
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">

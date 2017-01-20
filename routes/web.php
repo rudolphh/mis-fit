@@ -9,6 +9,16 @@
 
 // });
 
+// Route::get('/friend/requests', function(){
+// $sender = App\User::find(23);
+// $recipient = App\User::find(75);
+
+// $sender->befriend($recipient);
+// $recipient->acceptFriendRequest($sender);
+
+// return $sender->getFriends();
+// });
+
 
 
 //Route::get('/', 'Guest\PagesController@index');
@@ -30,6 +40,13 @@ Route::get('/measurements/serverSide', [
 ]);
 
 
+/* Return view dynamically */
+// Route::get('view/{name_view}', function ($name_view) {
+//     return view($name_view);
+// });
+
+
+
 //////////////////////////////////  
 
 Auth::routes();
@@ -42,3 +59,16 @@ Route::post('/settings', 'User\SettingsController@updateSettings')->name('settin
 
 Route::resource('measurements', 'User\MeasurementsController');
 
+
+///////////////  Friends routes
+
+Route::get('/friends', 'FriendsController@index')->name('friends.index');
+
+Route::get('/friends/requests', 'FriendsController@friendRequests')->name('friends.requests');
+Route::get('/friends/pending', 'FriendsController@pendingFriendships')->name('friends.pending');
+
+
+///////////////  Members routes
+
+Route::get('/members','User\MembersController@index')->name('members.index');
+Route::get('/members/ajax','User\MembersController@ajax_index')->name('members.ajax_index');

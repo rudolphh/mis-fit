@@ -138,7 +138,6 @@ return [
 
     'providers' => [
 
-        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -181,7 +180,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Yajra\Datatables\DatatablesServiceProvider::class
+        
+        Collective\Html\HtmlServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Hootlex\Friendships\FriendshipsServiceProvider::class
 
     ],
 

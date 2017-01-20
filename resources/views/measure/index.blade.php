@@ -6,40 +6,43 @@
 @section('main')
 
 {{-- <div class="table-responsive"> --}}
-<table id="measurements-table" class="row-border hover order-column hidden" 
+<table id="measurements-table" class="table table-striped table-bordered " 
         cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>BF%</th>
                 <th>Weight</th>
                 <th>Neck</th>
                 <th>Waist</th>
                 @if($user->gender == 'female')
                     <th>Hip</th>
                 @endif
+                <th>BF%</th>
+                <th>Date</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <th>Date</th>
-                <th>BF%</th>
-                <th>Weight</th>
-                <th>Neck</th>
-                <th>Waist</th>
-                @if($user->gender == 'female')
-                    <th>Hip</th>
-                @endif
-            </tr>
-        </tfoot>
+
         <tbody>
         @foreach ($measurements as $measure)
             <tr>
                 {{-- <td>{{ $loop->iteration }}</td> --}}
+
+                <td><span data-editable>{{ (float)$measure->weight }}</span></td>
+                <td><span data-editable>{{ (float)$measure->neck }}</span></td>
+                <td><span data-editable>{{ (float)$measure->waist }}</span></td>
+                @if($user->gender == 'female')
+                    <td>{{ (float)$measure->hip }}</td>
+                @endif
+
+                <td>{{ 0 }}</td>
+
                 <td>
         <a href="{{ route('measurements.show', ['id' => $measure->id ]) }}" >
-            {{ $measure->created_at->format('m/d/Y - h:i A') }}
-        </a><span style="float: right;">
+           <!-- {{ $measure->created_at->format('m/d/Y - h:i A') }} -->
+            {{ $measure->created_at->format('m/d/Y') }}
+        </a>
+
+        <!--
+        <span style="display: block;">
         <a class="btn btn-xs" type="button" data-title="Edit" 
                 href="{{ route('measurements.edit', ['id' => $measure->id ]) }}" >
             <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
@@ -49,15 +52,8 @@
                 data-id="{{ $measure->id }}"
                 data-href="{{ route('measurements.destroy', ['id' => $measure->id ]) }}" >
             <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
-        </a></span>
+        </a></span> -->
                 </td>
-                <td>{{ 0 }}</td>
-                <td>{{ (float)$measure->weight }}</td>
-                <td>{{ (float)$measure->neck }}</td>
-                <td>{{ (float)$measure->waist }}</td>
-                @if($user->gender == 'female')
-                    <td>{{ (float)$measure->hip }}</td>
-                @endif
 
 
 {{--     <td><p data-placement="top" data-toggle="tooltip" title="Edit">

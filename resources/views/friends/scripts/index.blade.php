@@ -4,34 +4,9 @@
     
 $(document).ready(function(){
 
-$('body').on('click', '[data-editable]', function(){
-  
-  var $el = $(this);
-              
-  var $input = $('<input/>').val( $el.text() );
-  $el.replaceWith( $input );
-  
-  var save = function(){
-    var $p = $('<span data-editable />').text( $input.val() );
-    $input.replaceWith( $p );
-  };
-  
-  /**
-    We're defining the callback with `one`, because we know that
-    the element will be gone just after that, and we don't want 
-    any callbacks leftovers take memory. 
-    Next time `p` turns into `input` this single callback 
-    will be applied again.
-  */
-  $input.one('blur', save).focus();
-  
-});// end (document).ready
 
+    $('#friends-table').DataTable({
 
-    $('#measurements-table').DataTable({
-        // processing: true,
-        // serverSide: true,
-        /* ajax: '{{ route('measurements.serverSide') }}',*/
         "aaSorting": [],
         "oLanguage": {
           "sLengthMenu": "_MENU_",
@@ -82,20 +57,20 @@ $('body').on('click', '[data-editable]', function(){
 
 // FOR DELETE
 
-    $('a.delete').click(function(e){
-      e.preventDefault();
+    // $('a.delete').click(function(e){
+    //   e.preventDefault();
 
-      var href = $(this).data('href');
-      $('#myModal').modal({backdrop: true});
-      $('#confirm-delete').attr('action', href);
-
-
-    });
+    //   var href = $(this).data('href');
+    //   $('#myModal').modal({backdrop: true});
+    //   $('#confirm-delete').attr('action', href);
 
 
+    // });
 
 
-$('#measurements-table').removeClass('hidden');
+
+
+$('#friends-table').removeClass('hidden');
 
 
 

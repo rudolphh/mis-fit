@@ -7,7 +7,8 @@
         @include('alerts.header-message')
 
         <div class="row">
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
+
                 <div class="panel panel-primary">
                 
                     <div class="panel-heading">
@@ -15,19 +16,21 @@
 
                         @if(isset($create_new))
                         <a class="btn btn-xs" href="{{ url('/measurements/create') }}" 
-                            style="float: right; color: white; ">
+                            style="float: right; color: #3097D1; ">
                             <i class="fa fa-btn fa-plus fa-2x"></i>
                         </a>
                         @elseif(isset($cancel_new))
                         <a class="btn btn-xs" href="{{ url('/measurements') }}" 
-                            style="float: right; color: white;">
+                            style="float: right; color: lightgray;">
                             <i class="fa fa-btn fa-times fa-2x"></i>
                         </a>                   
                         @endif
                     </div>
 
                     <div class="panel-body">
+
                         @yield('main')
+                        
                     </div>
                 </div>
             </div>

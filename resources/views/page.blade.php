@@ -15,7 +15,7 @@
     @endif
 
     <div class="content">
-        <div class="title m-b-md">
+        <div class="title m-b-md" >
             {{ config('app.styled_name', 'Laravel') }}
         </div>
 
